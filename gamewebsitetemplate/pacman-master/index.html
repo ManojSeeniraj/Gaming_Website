@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+<div id="background">
+		<div id="header">
+			<div>
+				<div>
+					<a href="../index.html" class="logo"><img src="../images/logo2.png" alt=""></a>
+					<ul>
+						<li>
+							<a href="../index.html" id="menu1">home</a>
+						</li>
+						<li>
+							<a href="../media.html" id="menu2">media</a>
+						</li>
+						<li class="selected">
+							<a href="../games.html" id="menu3">games</a>
+						</li>
+						<li>
+							<a href="../about.html" id="menu4">about</a>
+						</li>
+						<li>
+							<a href="../about.html" id="menu5">blog</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <meta charset="utf-8" />
+    <title>HTML5 Pacman</title>
+    
+    <style type="text/css">
+      @font-face {
+	    font-family: 'BDCartoonShoutRegular';
+        src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+	    font-weight: normal;
+	    font-style: normal;
+      }
+      #pacman {
+        height:450px;
+        width:342px;
+        margin:20px auto;
+      }
+      #shim { 
+        font-family: BDCartoonShoutRegular; 
+        position:absolute;
+        visibility:hidden
+      }
+      h1 { font-family: BDCartoonShoutRegular; text-align:center; }
+      body { width:342px; margin:0px auto; font-family:sans-serif; }
+      a { text-decoration:none; }
+    </style>
+
+</head>
+
+<body>
+  
+  <div id="shim">shim for font face</div>
+
+  <h1>HTML5 Pacman</h1>
+
+  <a href="http://arandomurl.com/">Writeup</a> |
+  Code on <a href="http://arandomurl.com/">Github</a>
+
+  <div id="pacman"></div>
+  <script src="pacman.js"></script>
+  <script src="modernizr-1.5.min.js"></script>
+
+  <script>
+
+    var el = document.getElementById("pacman");
+
+    if (Modernizr.canvas && Modernizr.localstorage && 
+        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+      window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+    } else { 
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+  </script>
+
+</body>
+</html>
